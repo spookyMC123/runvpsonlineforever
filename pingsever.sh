@@ -17,8 +17,8 @@ sudo apt update
 echo "📦 Installing 24/7 server..."
 
 # Setup directories
-mkdir -p 24/7/sever
-cd 24/7/sever || exit
+mkdir -p 24-7/sever
+cd 24-7/sever || exit
 
 # Write docker-compose.yml
 cat <<'EOF' > server.js
