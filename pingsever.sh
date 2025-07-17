@@ -12,9 +12,7 @@ echo "                            power by InfinityForge                        
 
 echo "* Installing Dependencies"
 sudo apt update
-sudo apt upgrade -y
-sudo apt install nodejs npm -y
-sudo apt update
+
 
 echo "📦 Installing 24/7 server..."
 
@@ -28,12 +26,14 @@ cat <<'EOF' > server.js
 const http = require("http");
 
 const server = http.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plain" });
   res.end("✅ Codespace is alive! " + new Date());
 });
 
 server.listen(8089, () => {
-  console.log("✅ HTTP server running on port 8089");
+  console.log("✅ HTTP server running on port 8089"
 });
+
 
 EOF
 
